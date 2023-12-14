@@ -21,12 +21,23 @@ a {
 #container {
   z-index: 3;
   position: relative;
-  margin: 0 15vh;
+  /*margin: 0 15vh;*/
 }
 
 #menu {
   z-index: 4;
-  margin-left: 15vh;
+  /*margin-left: 15vh;*/
+}
+
+.company{
+  color: #03e9f4;
+  font-family: Monospace;
+  font-weight: bold;
+  font-size: 5vh;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .canvas-box {
@@ -95,7 +106,8 @@ a {
   bottom: 1.2vh;
   left: 0;
   right: 0;
-  font-size: 1.6vh;
+  font-size: 2.9vh;
+  font-weight: bold;
   color: rgba(127, 255, 255, 0.75);
 }
 
@@ -466,7 +478,7 @@ button:active {
 }
 
 .prize-shine {
-  font-size: 5vh;
+  font-size: 3vh;
   font-weight: bold;
   color: #db5c58;
   vertical-align: middle;

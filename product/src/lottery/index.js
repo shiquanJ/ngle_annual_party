@@ -103,6 +103,7 @@ function initAll() {
   window.AJAX({
     url: "/getUsers",
     success(data) {
+      console.log(JSON.stringify(data))
       basicData.users = data;
 
       initCards();
@@ -258,6 +259,10 @@ function bindEvent() {
         break;
       // 抽奖
       case "lottery":
+        if(basicData.luckyUsers[2]){
+          alert("奖励以抽取完毕，请重置奖励~")
+          break;
+        }
         setLotteryStatus(true);
         // 每次抽奖前先保存上一次的抽奖数据
         saveData();
@@ -349,7 +354,7 @@ function createCard(user, isBold, id, showTable) {
 
   element.appendChild(createElement("name", user[1]));
 
-  element.appendChild(createElement("details", user[0] + "<br/>" + user[2]));
+  element.appendChild(createElement("details", user[0]));
   return element;
 }
 
@@ -509,7 +514,7 @@ function selectCard(duration = 600) {
     }
   }
 
-  let text = currentLuckys.map(item => item[1]);
+  let text = currentLuckys.map(item => item[0]);
   addQipao(
     `恭喜${text.join("、")}获得${currentPrize.title}, 新的一年必定旺旺旺。`
   );
@@ -709,7 +714,7 @@ function changeCard(cardIndex, user) {
 
   card.innerHTML = `<div class="company">${COMPANY}</div><div class="name">${
     user[1]
-  }</div><div class="details">${user[0] || ""}<br/>${user[2] || "PSST"}</div>`;
+  }</div><div class="details">${user[0] || ""}</div>`;
 }
 
 /**
@@ -823,7 +828,6 @@ function createHighlight() {
 }
 
 let onload = window.onload;
-
 window.onload = function () {
   onload && onload();
 

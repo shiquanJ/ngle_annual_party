@@ -1,0 +1,12 @@
+body {
+	margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.snow {
+	position: absolute;
+	top: 0;
+	left: 0;
+  background: linear-gradient(transparent,rgba(#000, 0.5)),
+    linear-gradient(to right,#224,#336,#224);
+}

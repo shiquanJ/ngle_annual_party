@@ -11,14 +11,14 @@
 1. 将源代码打包成 tar.gz 格式
 
 ```shel
-tar -czvf lottery.tar.gz lottery/
+tar -czvf ngle_annual_party.tar.gz ngle_annual_party
 ```
 
 2. 创建Dockerfile、构建镜像。Dockerfile见程序根目录的Dockerfile文件
 
    ```shell
    cp Dockerfile .
-   docker build -t lucky:v01 .
+   docker build -t jsqjiang/lucky:v1 .
    ```
 
 3. 运行dockers ，对外服务端口 28888
@@ -26,7 +26,7 @@ tar -czvf lottery.tar.gz lottery/
    - 方法一、无挂载文件
 
      ```shell
-     docker run -d -p 28888:8888  --name luckyGame  lucky:v01
+     docker run -d -p 8880:8880  jsqjiang/lucky:v1
      ```
 
      

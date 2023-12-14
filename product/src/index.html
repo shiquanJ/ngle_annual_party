@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <link rel="stylesheet" href="./css/snow.css">
   </head>
 
   <body>
@@ -16,19 +16,25 @@
     <script src="./lib/TrackballControls.js"></script>
     <script src="./lib/CSS3DRenderer.js"></script>
     <script src="./lib/ajax.js"></script>
-
+    <script src="./lib/snow.js"></script>
+  
+    <canvas id="snow" class="snow"></canvas>
+    <div class="company">
+      <span>大连恩格科技(nGle China)2023年送年会</span>
+    </div>
     <div class="canvas-box">
       <canvas id="canvas">你的浏览器不支持canvas</canvas>
     </div>
 
     <div class="music">
-      <audio id="music" src="./data/music.mp3" class="music-item" loop></audio>
+      <audio id="music" src="./data/tongyi.mp3" class="music-item" loop="true"></audio>
       <div id="musicBox" class="music-box" title="播放/暂停背景音乐">Music</div>
     </div>
 
     <div id="prizeBar"></div>
 
-    <div id="container"></div>
+    <div id="container">
+    </div>
 
     <div id="menu">
       <button id="enter">进入抽奖</button>
