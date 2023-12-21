@@ -53,6 +53,7 @@ let selectedCardIndex = [],
   // 当前抽的奖项，从最低奖开始抽，直到抽到大奖
   currentPrizeIndex,
   currentPrize,
+  isInit = false,
   // 正在抽奖
   isLotting = false,
   currentLuckys = [];
@@ -202,7 +203,6 @@ function initCards() {
 function setLotteryStatus(status = false) {
   isLotting = status;
 }
-
 /**
  * 事件绑定
  */
@@ -222,6 +222,34 @@ function bindEvent() {
 
     let target = e.target.id;
     switch (target) {
+      case "nextprize":
+        document.querySelector('#prize').classList.remove("none");
+        document.querySelector('#closeprize').classList.remove("none");
+        document.querySelector('#showprize').classList.add("none");
+
+        var htmlCode = `<h2><strong>${basicData.prizes[currentPrizeIndex-1].text} : 
+        ${basicData.prizes[currentPrizeIndex-1].title}</strong></h2>
+        <img src='./img/${currentPrizeIndex-1}.jpg'>`;
+        document.querySelector('#imgCollect').innerHTML = htmlCode;
+        isInit = false;
+        document.querySelector('#lottery').classList.remove("none")
+        document.querySelector('#nextprize').classList.add("none");
+        break;
+      case "showprize":
+        document.querySelector('#prize').classList.remove("none");
+        document.querySelector('#closeprize').classList.remove("none");
+        document.querySelector('#showprize').classList.add("none");
+
+        var htmlCode = `<h2><strong>${basicData.prizes[currentPrizeIndex].text} : 
+        ${basicData.prizes[currentPrizeIndex].title}</strong></h2>
+        <img src='./img/${currentPrizeIndex}.jpg'>`;
+        document.querySelector('#imgCollect').innerHTML = htmlCode;
+        break;
+      case "closeprize":
+        document.querySelector('#prize').classList.add("none")
+        document.querySelector('#closeprize').classList.add("none");
+        document.querySelector('#showprize').classList.remove("none");
+        break;
       // 显示数字墙
       case "welcome":
         switchScreen("enter");
@@ -259,6 +287,9 @@ function bindEvent() {
         break;
       // 抽奖
       case "lottery":
+        document.querySelector('#prize').classList.add("none")
+        document.querySelector('#closeprize').classList.add("none");
+        document.querySelector('#showprize').classList.remove("none");
         if(basicData.luckyUsers[2]){
           alert("奖励以抽取完毕，请重置奖励~")
           break;
@@ -655,8 +686,11 @@ function lottery() {
       }
     }
 
-    // console.log(currentLuckys);
     selectCard();
+    if(isInit){
+      document.querySelector('#lottery').classList.add("none")
+      document.querySelector('#nextprize').classList.remove("none");
+    }
   });
 }
 
@@ -676,6 +710,12 @@ function saveData() {
 
   basicData.luckyUsers[type] = curLucky;
 
+  // 这里可以写显示奖品的代码
+  console.log('currentPrize.count::'+currentPrize.count)
+  console.log('currentPrize.length::'+curLucky.length)
+  if(currentPrize.count == curLucky.length+1 || (currentPrize.count ==2 && curLucky.length ==2)){
+    isInit = true;
+  }
   if (currentPrize.count <= curLucky.length) {
     currentPrizeIndex--;
     if (currentPrizeIndex <= -1) {

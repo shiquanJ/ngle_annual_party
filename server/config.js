@@ -18,35 +18,56 @@ const prizes = [
     count: 1,
     text: "特等奖",
     title: "笔记本电脑",
-    img: "../img/mbp.jpg"
+    img: "../img/gift.jpg"
   },
   {
     type: 2,
     count: 1,
     text: "一等奖",
-    title: "任天堂Switch",
-    img: "../img/rentiantang.webp"
+    title: "PS5",
+    img: "../img/gift.jpg"
   },
   {
     type: 3,
-    count: 3,
+    count: 2,
     text: "二等奖",
-    title: "无线键盘鼠标套件",
-    img: "../img/jianpanshubiao.webp"
+    title: "iPad",
+    img: "../img/gift.jpg"
   },
   {
     type: 4,
-    count: 10,
+    count: 3,
     text: "三等奖",
-    title: "小米电动牙刷",
-    img: "../img/xiaomiyashua.webp"
+    title: "Nintendo Switch",
+    img: "../img/gift.jpg"
+  },
+  {
+    type: 5,
+    count: 5,
+    text: "四等奖",
+    title: "键盘",
+    img: "../img/gift.jpg"
+  },
+  {
+    type: 6,
+    count: 10,
+    text: "五等奖",
+    title: "鼠标",
+    img: "../img/gift.jpg"
+  },
+  {
+    type: 7,
+    count: 10,
+    text: "六等奖",
+    title: "Kakao充电宝",
+    img: "../img/gift.jpg"
   },
 ];
 
 /**
  * 一次抽取的奖品个数与prizes对应
  */
-const EACH_COUNT = [1, 1, 1, 1, 1];
+const EACH_COUNT = [1, 1, 1, 1, 1, 1, 1, 1];
 
 /**
  * 卡片公司名称标识

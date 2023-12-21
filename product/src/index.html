@@ -8,6 +8,11 @@
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
     <link rel="stylesheet" href="./css/snow.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   </head>
 
   <body>
@@ -27,11 +32,35 @@
     </div>
 
     <div class="music">
-      <audio id="music" src="./data/tongyi.mp3" class="music-item" loop="true"></audio>
+      <audio id="music" src="./data/background.mp3" class="music-item" loop="true"></audio>
       <div id="musicBox" class="music-box" title="播放/暂停背景音乐">Music</div>
     </div>
 
     <div id="prizeBar"></div>
+    
+    <div class="background" >
+
+      <div id="prize"class="card none animate__bounceIn">
+        <div class="content">
+          <div class="back">
+            <div class="back-content" id="imgCollect">
+              
+            </div>
+          </div>
+          <div class="front">
+            
+            <div class="img">
+              <div class="circle">
+              </div>
+              <div class="circle" id="right">
+              </div>
+              <div class="circle" id="bottom">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="container">
     </div>
@@ -39,7 +68,10 @@
     <div id="menu">
       <button id="enter">进入抽奖</button>
       <div id="lotteryBar" class="none">
+        <button id="showprize">当前奖品</button>
+        <button id="closeprize" class="none">关闭窗口</button>
         <button id="lottery">开始抽奖</button>
+        <button id="nextprize" class="none">下一个奖品</button>
         <button id="reLottery">重新抽奖</button>
         <div class="fixed-bar">
           <button id="save" class="fixed-btn">导出抽奖结果</button>
