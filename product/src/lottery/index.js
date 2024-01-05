@@ -13,7 +13,7 @@ import { NUMBER_MATRIX } from "./config.js";
 const ROTATE_TIME = 3000;
 const ROTATE_LOOP = 1000;
 const BASE_HEIGHT = 1080;
-
+var luckyList = [];
 let TOTAL_CARDS,
   btns = {
     enter: document.querySelector("#enter"),
@@ -223,33 +223,41 @@ function bindEvent() {
     let target = e.target.id;
     switch (target) {
       case "nextprize":
+        document.querySelector('#lucky').classList.add("none");
+        document.querySelector('#showLuckyUsers').classList.add("none");
+
         document.querySelector('#prize').classList.remove("none");
         document.querySelector('#closeprize').classList.remove("none");
         document.querySelector('#showprize').classList.add("none");
 
-        var htmlCode = `<h2><strong>${basicData.prizes[currentPrizeIndex-1].text} : 
-        ${basicData.prizes[currentPrizeIndex-1].title}</strong></h2>
-        <img src='./img/${currentPrizeIndex-1}.jpg'>`;
+        var htmlCode = `${basicData.prizes[currentPrizeIndex-1].title}</strong></h2>
+        <img src='./img/${currentPrizeIndex-1}.png'>`;
         document.querySelector('#imgCollect').innerHTML = htmlCode;
         isInit = false;
         document.querySelector('#lottery').classList.remove("none")
         document.querySelector('#nextprize').classList.add("none");
         break;
       case "showprize":
+        document.querySelector('#lucky').classList.add("none");
+
         document.querySelector('#prize').classList.remove("none");
         document.querySelector('#closeprize').classList.remove("none");
         document.querySelector('#showprize').classList.add("none");
 
-        var htmlCode = `<h2><strong>${basicData.prizes[currentPrizeIndex].text} : 
-        ${basicData.prizes[currentPrizeIndex].title}</strong></h2>
-        <img src='./img/${currentPrizeIndex}.jpg'>`;
+        var htmlCode = `${basicData.prizes[currentPrizeIndex].title}</strong></h2>
+        <img src='./img/${currentPrizeIndex}.png'>`;
         document.querySelector('#imgCollect').innerHTML = htmlCode;
         break;
-      case "closeprize":
-        document.querySelector('#prize').classList.add("none")
-        document.querySelector('#closeprize').classList.add("none");
-        document.querySelector('#showprize').classList.remove("none");
-        break;
+        case "closeprize":
+          document.querySelector('#prize').classList.add("none")
+          document.querySelector('#closeprize').classList.add("none");
+          document.querySelector('#showprize').classList.remove("none");
+          break;
+        //中奖名单
+        case "showLuckyUsers":
+          document.querySelector('#lucky').classList.remove("none");
+          document.querySelector('#prize').classList.add("none")
+          break;
       // 显示数字墙
       case "welcome":
         switchScreen("enter");
@@ -265,6 +273,10 @@ function bindEvent() {
         break;
       // 重置
       case "reset":
+        document.querySelector('#prize').classList.add("none")
+        document.querySelector('#lucky').classList.add("none");
+        document.querySelector('#showLuckyUsers').classList.add("none");
+
         let doREset = window.confirm(
           "是否确认重置数据，重置后，当前已抽的奖项全部清空？"
         );
@@ -287,6 +299,9 @@ function bindEvent() {
         break;
       // 抽奖
       case "lottery":
+        document.querySelector('#lucky').classList.add("none");
+        document.querySelector('#showLuckyUsers').classList.add("none");
+
         document.querySelector('#prize').classList.add("none")
         document.querySelector('#closeprize').classList.add("none");
         document.querySelector('#showprize').classList.remove("none");
@@ -307,6 +322,15 @@ function bindEvent() {
         break;
       // 重新抽奖
       case "reLottery":
+        document.querySelector('#lottery').classList.remove("none");
+
+        document.querySelector('#lucky').classList.add("none");
+        document.querySelector('#showLuckyUsers').classList.add("none");
+
+        document.querySelector('#prize').classList.add("none")
+        document.querySelector('#closeprize').classList.add("none");
+        document.querySelector('#showprize').classList.remove("none");
+
         if (currentLuckys.length === 0) {
           addQipao(`当前还没有抽奖，无法重新抽取喔~~`);
           return;
@@ -382,8 +406,6 @@ function createCard(user, isBold, id, showTable) {
   }
   //添加公司标识
   element.appendChild(createElement("company", COMPANY));
-
-  element.appendChild(createElement("name", user[1]));
 
   element.appendChild(createElement("details", user[0]));
   return element;
@@ -685,11 +707,20 @@ function lottery() {
         break;
       }
     }
-
+    luckyList.push(currentLuckys)
     selectCard();
     if(isInit){
-      document.querySelector('#lottery').classList.add("none")
+      console.log(luckyList)
+      var htmlCode = "";
+      luckyList.forEach(element => {
+        htmlCode += `<strong>${element}</strong>`;
+      });
+      document.querySelector('#luckyUsers').innerHTML = htmlCode;
+
+      document.querySelector('#lottery').classList.add("none");
+      document.querySelector('#showLuckyUsers').classList.remove("none");
       document.querySelector('#nextprize').classList.remove("none");
+      luckyList = [];
     }
   });
 }
@@ -752,9 +783,8 @@ function random(num) {
 function changeCard(cardIndex, user) {
   let card = threeDCards[cardIndex].element;
 
-  card.innerHTML = `<div class="company">${COMPANY}</div><div class="name">${
-    user[1]
-  }</div><div class="details">${user[0] || ""}</div>`;
+  card.innerHTML = `<div class="company">${COMPANY}</div>
+  </div><div class="details">${user[0] || ""}</div>`;
 }
 
 /**

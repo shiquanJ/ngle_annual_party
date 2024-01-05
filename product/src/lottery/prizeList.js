@@ -146,7 +146,7 @@ function showPrizeList(currentPrizeIndex) {
   if (currentPrize.type === defaultType) {
     currentPrize.count === "不限制";
   }
-  let htmlCode = `<div class="prize-mess">正在抽取<label id="prizeType" class="prize-shine">${currentPrize.text}</label>，剩余<label id="prizeLeft" class="prize-shine">${currentPrize.count}</label>个</div><ul class="prize-list">`;
+  let htmlCode = `<ul class="prize-list">`;
   prizes.forEach(item => {
     if (item.type === defaultType) {
       return true;
@@ -159,7 +159,7 @@ function showPrizeList(currentPrizeIndex) {
                             <img src="${item.img}" alt="${item.title}">
                         </div>
                         <div class="prize-text">
-                            <h5 class="prize-title">${item.text}
+                            <h5 class="prize-title">${item.title}
     </h5>
                             <div class="prize-count">
                                 <div class="progress">
@@ -227,7 +227,6 @@ let setPrizeData = (function () {
       lastBox.classList.remove("shine");
       lastBox.classList.add("done");
       elements.box && elements.box.classList.add("shine");
-      prizeElement.prizeType.textContent = currentPrize.text;
 
       lasetPrizeIndex = currentPrizeIndex;
     }
@@ -244,7 +243,6 @@ let setPrizeData = (function () {
     let percent = (count / totalCount).toFixed(2);
     elements.bar && (elements.bar.style.width = percent * 100 + "%");
     elements.text && (elements.text.textContent = count + "/" + totalCount);
-    prizeElement.prizeLeft.textContent = count;
   };
 })();
 

@@ -20,9 +20,10 @@ a {
 
 #container {
   z-index: 3;
-  position: relative;
-  margin-top: 50px;
-  left: 3%;
+  position: absolute;
+  top: 0;
+  margin-top: 25px;
+  left: 1%;
   /*margin: 0 15vh;*/
 }
 
@@ -37,7 +38,7 @@ a {
   font-weight: bold;
   font-size: 4.5vh;
   position: absolute;
-  top: 70px;
+  top: 50px;
   left: 50%;
   width: 100%;
   text-align: center;
@@ -107,7 +108,7 @@ a {
 
 .element .details {
   position: absolute;
-  bottom: 1.2vh;
+  bottom: 5vh;
   left: 0;
   right: 0;
   font-size: 2.9vh;
@@ -191,7 +192,7 @@ button:active {
   position: fixed;
   left: 0;
   padding-left: 1.2vh;
-  top: 1.2vh;
+  top: 5vh;
   z-index: 2;
 }
 

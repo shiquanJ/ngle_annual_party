@@ -24,10 +24,11 @@
     <script src="./lib/snow.js"></script>
   
     <canvas id="snow" class="snow"></canvas>
+    <div id="background"></div>
     <div class="company">
-      <span>大连恩格科技(nGle China)2023年送年会</span>
+      <span>延边一中大连校友会2024年新年会</span>
     </div>
-    <div class="canvas-box">
+    <div id="canvas-box" class="canvas-box">
       <canvas id="canvas">你的浏览器不支持canvas</canvas>
     </div>
 
@@ -37,9 +38,15 @@
     </div>
 
     <div id="prizeBar"></div>
-    
-    <div class="background" >
-
+    <div class="prize" >
+      <div id="lucky" class="container none animate__bounceIn">
+        <div class="box">
+          <span class="title">恭喜</span>
+          <div id="luckyUsers">
+          </div>
+        </div>
+      </div>
+      
       <div id="prize"class="card none animate__bounceIn">
         <div class="content">
           <div class="back">
@@ -70,9 +77,10 @@
       <div id="lotteryBar" class="none">
         <button id="showprize">当前奖品</button>
         <button id="closeprize" class="none">关闭窗口</button>
-        <button id="lottery">开始抽奖</button>
+        <button id="showLuckyUsers" class="none">中奖名单</button>
         <button id="nextprize" class="none">下一个奖品</button>
-        <button id="reLottery">重新抽奖</button>
+        <button id="lottery">开始抽奖</button>
+        <!-- <button id="reLottery">重新抽奖</button> -->
         <div class="fixed-bar">
           <button id="save" class="fixed-btn">导出抽奖结果</button>
           <button id="reset" class="fixed-btn">重置</button>
@@ -82,4 +90,8 @@
 
     <div class="qipao-container"></div>
   </body>
+  <script>
+    var box = document.getElementById("canvas-box")
+    box.parentNode.removeChild(box);
+</script>
 </html>
