@@ -6,10 +6,19 @@ body {
 body {
   background: linear-gradient(to bottom, #131313 0%, #02101c 100%);
   margin: 0;
-  font-family: Helvetica, sans-serif;
   overflow: hidden;
 }
-
+#background {
+  background: rgba(0, 0, 0, 0.7) url('https://ngledl.oss-cn-zhangjiakou.aliyuncs.com/images/rws-bg.jpg');
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-blend-mode:lighten;
+  position: absolute;
+  z-index: 999;
+}
 a {
   color: #ffffff;
 }
@@ -20,23 +29,24 @@ a {
 
 #container {
   z-index: 3;
-  position: relative;
-  /*margin: 0 15vh;*/
+  position: absolute;
+  top: 0;
+  margin-top: 25px;
+  left: 4%;
 }
 
 #menu {
   z-index: 4;
-  /*margin-left: 15vh;*/
+  margin-left: 2vh;
 }
 
 .company{
-  color: #03e9f4;
-  font-family: Monospace;
+  color: #00f1fd;
   font-weight: bold;
   font-size: 5vh;
   position: absolute;
-  top: 20px;
-  left: 50%;
+  top: 35px;
+  left: 53%;
   transform: translateX(-50%);
 }
 
@@ -67,7 +77,7 @@ a {
 }
 
 .element {
-  width: 12vh;
+  width: 13vh;
   height: 16vh;
   box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
   border: 1px solid rgba(127, 255, 255, 0.25);
@@ -92,7 +102,7 @@ a {
 
 .element .name {
   position: absolute;
-  top: 4.6vh;
+  top: 0.2vh;
   left: 0;
   right: 0;
   font-size: 2.9vh;
@@ -103,7 +113,7 @@ a {
 
 .element .details {
   position: absolute;
-  bottom: 1.2vh;
+  bottom: 0.5vh;
   left: 0;
   right: 0;
   font-size: 2.9vh;
@@ -133,8 +143,8 @@ button:active {
 }
 
 .highlight {
-  background-color: rgba(253, 105, 0, 0.95) !important;
-  box-shadow: 0 0 12px rgba(253, 105, 0, 0.95);
+  background-color: #fa272e !important;
+  box-shadow: 0 0 12px #fa272e;
   border: 1px solid rgba(253, 105, 0, 0.25);
 }
 
@@ -259,7 +269,7 @@ button:active {
   border-radius: 1.8vh;
   position: relative;
   animation: animate-positive 2s;
-  background-color: #d9534f;
+  background-color: #fa1818;
   height: 1.8vh;
   -webkit-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
@@ -480,7 +490,7 @@ button:active {
 .prize-shine {
   font-size: 3vh;
   font-weight: bold;
-  color: #db5c58;
+  color: #fa272e;
   vertical-align: middle;
   padding: 0 6px;
 }
@@ -526,7 +536,7 @@ button:active {
   font-size: 1.4vh;
   color: #fff;
   cursor: pointer;
-  background-color: rgba(253, 105, 0, 0.9);
+  background-color: #fa272e;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 

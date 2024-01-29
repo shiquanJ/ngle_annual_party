@@ -146,7 +146,7 @@ function showPrizeList(currentPrizeIndex) {
   if (currentPrize.type === defaultType) {
     currentPrize.count === "不限制";
   }
-  let htmlCode = `<div class="prize-mess">正在抽取<label id="prizeType" class="prize-shine">${currentPrize.text}</label><label id="prizeText" class="prize-shine">${currentPrize.title}</label>，剩余<label id="prizeLeft" class="prize-shine">${currentPrize.count}</label>个</div><ul class="prize-list">`;
+  let htmlCode = `<div class="prize-mess">正在抽取<label id="prizeType" class="prize-shine"></label><label id="prizeText" class="prize-shine">${currentPrize.title}</label>，剩余<label id="prizeLeft" class="prize-shine">${currentPrize.count}</label>个</div><ul class="prize-list">`;
   prizes.forEach(item => {
     if (item.type === defaultType) {
       return true;
@@ -159,7 +159,7 @@ function showPrizeList(currentPrizeIndex) {
                             <img src="${item.img}" alt="${item.title}">
                         </div>
                         <div class="prize-text">
-                            <h5 class="prize-title">${item.text} ${
+                            <h5 class="prize-title"> ${
       item.title
     }</h5>
                             <div class="prize-count">

@@ -279,7 +279,7 @@ THREE.CSS3DRenderer = function () {
 			if ( camera.isPerspectiveCamera ) {
 
 				domElement.style.WebkitPerspective = fov + 'px';
-				domElement.style.perspective = fov + 'px';
+				domElement.style.perspective = fov+100 + 'px';
 
 			}
 

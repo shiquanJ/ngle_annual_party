@@ -350,8 +350,6 @@ function createCard(user, isBold, id, showTable) {
       "rgba(0,127,127," + (Math.random() * 0.7 + 0.25) + ")";
   }
   //添加公司标识
-  element.appendChild(createElement("company", COMPANY));
-
   element.appendChild(createElement("name", user[1]));
 
   element.appendChild(createElement("details", user[0]));
@@ -712,7 +710,7 @@ function random(num) {
 function changeCard(cardIndex, user) {
   let card = threeDCards[cardIndex].element;
 
-  card.innerHTML = `<div class="company">${COMPANY}</div><div class="name">${
+  card.innerHTML = `<div class="name">${
     user[1]
   }</div><div class="details">${user[0] || ""}</div>`;
 }

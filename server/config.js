@@ -17,41 +17,62 @@ const prizes = [
     type: 1,
     count: 1,
     text: "特等奖",
-    title: "笔记本电脑",
-    img: "../img/mbp.jpg"
+    title: "Iroom吸尘器",
+    img: "../img/iroom.webp"
   },
   {
     type: 2,
     count: 1,
     text: "一等奖",
-    title: "任天堂Switch",
-    img: "../img/rentiantang.webp"
+    title: "拖地清扫机",
+    img: "../img/tuodi.jpg"
   },
   {
     type: 3,
-    count: 3,
+    count: 1,
     text: "二等奖",
-    title: "无线键盘鼠标套件",
-    img: "../img/jianpanshubiao.webp"
+    title: "咖啡机",
+    img: "../img/kafeiji.jpg"
   },
   {
     type: 4,
-    count: 10,
+    count: 1,
     text: "三等奖",
-    title: "小米电动牙刷",
-    img: "../img/xiaomiyashua.webp"
+    title: "脉鲜卡式炉",
+    img: "../img/maixian.jpg"
+  },
+  {
+    type: 5,
+    count: 1,
+    text: "三等奖",
+    title: "蔬菜水果搅拌机",
+    img: "../img/shucai.jpg"
+  },
+  {
+    type: 6,
+    count: 6,
+    text: "三等奖",
+    title: "红外线烤肉机",
+    img: "../img/hongwaixian.jpg"
+  },
+  {
+    type: 7,
+    count: 3,
+    text: "三等奖",
+    title: "炒锅礼盒",
+    img: "../img/chaojianguo.jpg"
   },
 ];
 
 /**
  * 一次抽取的奖品个数与prizes对应
  */
-const EACH_COUNT = [1, 1, 1, 1, 1];
+const EACH_COUNT = [1, 1, 1, 1, 1, 1, 1, 1];
 
 /**
  * 卡片公司名称标识
  */
-const COMPANY = "NGLE";
+const COMPANY = "RWS";
 
 module.exports = {
   prizes,

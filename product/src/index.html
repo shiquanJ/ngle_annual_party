@@ -17,20 +17,21 @@
     <script src="./lib/CSS3DRenderer.js"></script>
     <script src="./lib/ajax.js"></script>
     <script src="./lib/snow.js"></script>
-  
+
     <canvas id="snow" class="snow"></canvas>
     <div class="company">
-      <span>大连恩格科技(nGle China)2023年送年会</span>
+      <span>RWS大连2024年新春团拜会</span>
     </div>
     <div class="canvas-box">
       <canvas id="canvas">你的浏览器不支持canvas</canvas>
     </div>
 
     <div class="music">
-      <audio id="music" src="./data/tongyi.mp3" class="music-item" loop="true"></audio>
+      <audio id="music" src="https://ngledl.oss-cn-zhangjiakou.aliyuncs.com/background.mp3" class="music-item" loop="true"></audio>
       <div id="musicBox" class="music-box" title="播放/暂停背景音乐">Music</div>
     </div>
 
+    <div id="background" onclick="document.getElementById('background').style.display='none';"></div>
     <div id="prizeBar"></div>
 
     <div id="container">
@@ -39,8 +40,8 @@
     <div id="menu">
       <button id="enter">进入抽奖</button>
       <div id="lotteryBar" class="none">
-        <button id="lottery">开始抽奖</button>
         <button id="reLottery">重新抽奖</button>
+        <button id="lottery">开始抽奖</button>
         <div class="fixed-bar">
           <button id="save" class="fixed-btn">导出抽奖结果</button>
           <button id="reset" class="fixed-btn">重置</button>
