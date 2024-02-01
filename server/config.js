@@ -44,21 +44,28 @@ const prizes = [
   {
     type: 5,
     count: 1,
-    text: "三等奖",
+    text: "四等奖",
+    title: "多功能烹饪锅",
+    img: "../img/duogongneng.jpg"
+  },
+  {
+    type: 6,
+    count: 1,
+    text: "五等奖",
     title: "蔬菜水果搅拌机",
     img: "../img/shucai.jpg"
   },
   {
-    type: 6,
+    type: 7,
     count: 6,
-    text: "三等奖",
+    text: "六等奖",
     title: "红外线烤肉机",
     img: "../img/hongwaixian.jpg"
   },
   {
-    type: 7,
+    type: 8,
     count: 3,
-    text: "三等奖",
+    text: "七等奖",
     title: "炒锅礼盒",
     img: "../img/chaojianguo.jpg"
   },
@@ -67,7 +74,7 @@ const prizes = [
 /**
  * 一次抽取的奖品个数与prizes对应
  */
-const EACH_COUNT = [1, 1, 1, 1, 1, 1, 1, 1];
+const EACH_COUNT = [1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 /**
  * 卡片公司名称标识
