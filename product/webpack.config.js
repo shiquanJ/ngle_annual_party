@@ -58,7 +58,7 @@ module.exports = {
         to: "./css"
       },
       {
-        from: "./src/data",
+        from: "../server/data",
         to: "./data"
       },
       {
